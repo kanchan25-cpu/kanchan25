@@ -110,6 +110,9 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .hero-photo{aspect-ratio:1/1; background:var(--surface); border:1px solid var(--line); border-radius:6px; overflow:hidden; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:12px; text-align:center; padding:16px;}
 .hero-photo img{width:100%; height:100%; object-fit:cover;}
 
+
+
+
 .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); max-width:1240px; margin:0 auto 0;}
 .stat{background:var(--surface); padding:22px 24px;}
 .stat .num{font-family:'Fraunces',serif; font-size:28px; color:var(--accent);}
@@ -315,6 +318,163 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
   <h2 class="section-title">Hi, I'm Kanchan.</h2>
   <p class="section-sub" style="max-width:760px;">I'm a PhD student in the Department of Data Science and Engineering at IISER Bhopal, supervised by Dr. Vaibhav Kumar.My research lies at the intersection of computer vision and urban planning, using visual and spatial data to understand urban environments and inform more effective planning decisions. I hold an M.Sc. in Mathematics from IIT Kanpur and a B.Sc. (Hons.) in Mathematics from Raj Rishi Autonomous College, Alwar, Raj. Outside research, I play badminton, read, write, and travel.</p>
 </section>
+
+
+
+<!-- ====================== HIGHLIGHTS ====================== -->
+<section class="section" id="highlights">
+  <div class="eyebrow">Highlights</div>
+
+  <div class="section-head-row">
+    <div>
+      <h2 class="section-title">Recent highlights</h2>
+      <p class="section-sub" style="margin-bottom:0;">
+        Recent research activities, presentations, and academic updates.
+      </p>
+    </div>
+  </div>
+
+  <div class="highlights-wrap">
+
+    <div class="highlights-slider" id="highlightsSlider">
+
+      <article class="highlight-card">
+        <div class="highlight-top">
+          <span class="highlight-tag">Research · Poster</span>
+          <span class="highlight-date">2026</span>
+        </div>
+
+        <h3>Workshop paper accepted as a poster at NeurIPS 2026</h3>
+
+        <p>
+          My workshop paper has been accepted as a poster at the
+          Women in Machine Learning (WiML) Workshop at NeurIPS 2026.
+        </p>
+
+        <a
+          class="highlight-link"
+          href="https://lnkd.in/p/dM6ycHVU"
+          target="_blank"
+          rel="noopener">
+          View announcement →
+        </a>
+      </article>
+
+
+      <article class="highlight-card">
+        <div class="highlight-top">
+          <span class="highlight-tag">Symposium · IISER Bhopal</span>
+          <span class="highlight-date">25 July 2026</span>
+        </div>
+
+        <h3>Symposium on AI in Energy Systems</h3>
+
+        <p>
+          Attended the Symposium on AI in Energy Systems at IISER Bhopal,
+          featuring talks, discussions, student presentations, and a poster session.
+        </p>
+
+        <a
+          class="highlight-link"
+          href="https://www.iiserb.ac.in/assets/all_upload/events/Symposium_AI_in_Energy_Systems.pdf"
+          target="_blank"
+          rel="noopener">
+          View event details →
+        </a>
+      </article>
+
+    </div>
+
+    <div class="highlights-controls">
+
+      <div class="highlight-dots">
+        <button class="highlight-dot active" aria-label="Show highlight 1"></button>
+        <button class="highlight-dot" aria-label="Show highlight 2"></button>
+      </div>
+
+      <div class="highlight-arrows">
+        <button class="highlight-arrow" id="highlightPrev" aria-label="Previous highlight">
+          ←
+        </button>
+        <button class="highlight-arrow" id="highlightNext" aria-label="Next highlight">
+          →
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section> 
+
+
+<script>
+/* ---------- Highlights Slider ---------- */
+
+const highlightsSlider = document.getElementById('highlightsSlider');
+const highlightCards = highlightsSlider.querySelectorAll('.highlight-card');
+const highlightDots = document.querySelectorAll('.highlight-dot');
+const highlightPrev = document.getElementById('highlightPrev');
+const highlightNext = document.getElementById('highlightNext');
+
+let highlightIndex = 0;
+
+function showHighlight(index){
+  if(index < 0) index = highlightCards.length - 1;
+  if(index >= highlightCards.length) index = 0;
+
+  highlightIndex = index;
+
+  highlightsSlider.scrollTo({
+    left: highlightCards[index].offsetLeft - highlightsSlider.offsetLeft,
+    behavior: 'smooth'
+  });
+
+  highlightDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+highlightNext.addEventListener('click', () => {
+  showHighlight(highlightIndex + 1);
+});
+
+highlightPrev.addEventListener('click', () => {
+  showHighlight(highlightIndex - 1);
+});
+
+highlightDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    showHighlight(index);
+  });
+});
+
+highlightsSlider.addEventListener('scroll', () => {
+  const scrollLeft = highlightsSlider.scrollLeft;
+
+  let closestIndex = 0;
+  let closestDistance = Infinity;
+
+  highlightCards.forEach((card, index) => {
+    const distance = Math.abs(card.offsetLeft - highlightsSlider.offsetLeft - scrollLeft);
+
+    if(distance < closestDistance){
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  });
+
+  highlightIndex = closestIndex;
+
+  highlightDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === closestIndex);
+  });
+});
+</script>
+
+   
+
+
+   
 
 <!-- ====================== ACADEMICS: EDUCATION ====================== -->
 <section class="section" id="education">
