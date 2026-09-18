@@ -7,6 +7,7 @@
 <meta name="description" content="Kanchan Sharma — PhD researcher building a data-driven decision-making toolbox for urban redevelopment, IISER Bhopal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 /* ====================== EDIT ZONE 1: COLORS & FONTS ======================
    Change hex values below to re-theme the whole site instantly. */
@@ -47,11 +48,7 @@ img{max-width:100%; display:block;}
 :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 @media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important; scroll-behavior:auto !important;}}
 
-/* ---------- Header / nav ---------- */
-header{
-  position:sticky; top:0; z-index:200; background:rgba(11,12,16,.86); backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line);
-}
+header{position:sticky; top:0; z-index:200; background:rgba(11,12,16,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
 html.light header{background:rgba(247,245,239,.88);}
 .nav-wrap{max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:18px 32px;}
 .logo{font-family:'Fraunces',serif; font-size:19px; font-weight:600;}
@@ -79,18 +76,15 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 }
 .icon-btn:hover{color:var(--accent); border-color:var(--accent);}
 
-/* mobile nav */
 #navcheck{display:none;}
 .hamburger{display:none;}
 
-/* ---------- Buttons ---------- */
 .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:24px; font-size:14px; font-weight:600; cursor:pointer; border:1px solid transparent;}
 .btn-primary{background:var(--ink); color:var(--bg);}
 .btn-primary:hover{background:var(--accent); color:#fff;}
 .btn-outline{background:transparent; color:var(--ink); border-color:var(--line);}
 .btn-outline:hover{border-color:var(--ink);}
 
-/* ---------- Section shell ---------- */
 .section{max-width:1240px; margin:0 auto; padding:88px 32px; border-bottom:1px solid var(--line);}
 .section:last-of-type{border-bottom:none;}
 .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:flex; align-items:center; gap:10px;}
@@ -100,9 +94,10 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .view-all{font-size:13px; color:var(--ink-soft); font-weight:600;}
 .view-all:hover{color:var(--accent);}
 .section-head-row{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:30px;}
+.back-link{display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:600; color:var(--ink-soft); margin-bottom:26px;}
+.back-link:hover{color:var(--accent);}
 
-/* ---------- Hero ---------- */
-.hero{max-width:1240px; margin:0 auto; padding:80px 32px 60px; display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center;}
+.hero{max-width:1240px; margin:0 auto; padding:80px 32px 60px; display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:center;}
 .hero-eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:18px;}
 .hero h1{font-size:clamp(38px,5vw,60px); line-height:1.05; margin-bottom:20px;}
 .hero p.lede{font-size:17.5px; color:var(--ink-soft); max-width:520px; margin-bottom:32px;}
@@ -110,25 +105,15 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .hero-photo{aspect-ratio:1/1; background:var(--surface); border:1px solid var(--line); border-radius:6px; overflow:hidden; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:12px; text-align:center; padding:16px;}
 .hero-photo img{width:100%; height:100%; object-fit:cover;}
 
-
-
-
-.stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); max-width:1240px; margin:0 auto 0;}
-.stat{background:var(--surface); padding:22px 24px;}
-.stat .num{font-family:'Fraunces',serif; font-size:28px; color:var(--accent);}
-.stat .label{font-size:12px; color:var(--ink-soft); margin-top:4px;}
-
-/* ---------- Cards ---------- */
 .card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-.card{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:26px; display:flex; flex-direction:column; gap:10px; transition:transform .2s, border-color .2s;}
+a.card, .card{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:26px; display:flex; flex-direction:column; gap:10px; transition:transform .2s, border-color .2s;}
+a.card{cursor:pointer;}
 .card:hover{transform:translateY(-3px); border-color:var(--accent);}
 .card .tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent-2);}
 .card h4{font-size:17px;}
 .card p{font-size:13.8px; color:var(--ink-soft);}
-.card .meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; padding-top:6px;}
-.chip{font-size:11px; padding:3px 9px; border:1px solid var(--line); border-radius:20px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
+.card .go{margin-top:auto; padding-top:6px; font-size:13px; font-weight:600; color:var(--accent);}
 
-/* ---------- Highlights ---------- */
 .highlights-wrap{display:flex; flex-direction:column; gap:20px;}
 .highlights-slider{display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:4px;}
 .highlight-card{
@@ -139,7 +124,6 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .highlight-top{display:flex; justify-content:space-between; align-items:center;}
 .highlight-tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--accent-2);}
 .highlight-date{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-soft);}
-/* This is the line that colors "Workshop paper accepted..." and "Symposium on AI in Energy Systems" */
 .highlight-card h3{font-size:19px; color:var(--accent);}
 .highlight-card p{font-size:14px; color:var(--ink-soft);}
 .highlight-link{font-size:13.5px; font-weight:600; color:var(--accent);}
@@ -155,7 +139,6 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 }
 .highlight-arrow:hover{color:var(--accent); border-color:var(--accent);}
 
-/* ---------- Timeline (Academics) ---------- */
 .timeline{position:relative; margin-top:10px; padding-left:6px;}
 .timeline::before{content:''; position:absolute; left:98px; top:6px; bottom:6px; width:1px; background:var(--line);}
 .tl-item{display:grid; grid-template-columns:88px 24px 1fr; gap:0; margin-bottom:32px;}
@@ -165,7 +148,6 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .tl-content h4{font-size:16px; margin-bottom:3px;}
 .tl-content p{color:var(--ink-soft); font-size:13.5px;}
 
-/* ---------- Pills / lists ---------- */
 .pill-grid{display:flex; flex-wrap:wrap; gap:10px;}
 .pill{padding:9px 16px; border:1px solid var(--line); border-radius:20px; font-size:13.5px; background:var(--surface); color:var(--ink-soft); font-weight:500;}
 
@@ -176,37 +158,15 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .award-row .title{font-size:15px; font-weight:500;}
 .award-row .org{font-size:12.5px; color:var(--ink-soft);}
 
-/* ---------- Publications ---------- */
 .pub-item{padding:20px 0; border-bottom:1px solid var(--line); display:flex; gap:18px;}
 .pub-item:first-child{border-top:1px solid var(--line);}
 .pub-status{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; color:#0B0C10; background:var(--accent-2); padding:4px 9px; border-radius:20px; height:fit-content; white-space:nowrap;}
 .pub-body h4{font-size:15.5px; margin-bottom:5px;}
 .pub-body p{font-size:13px; color:var(--ink-soft);}
 
-/* ---------- Research data grid ---------- */
-.data-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
-.data-card{border:1px solid var(--line); border-radius:8px; padding:22px; background:var(--surface);}
-.data-card h4{font-size:13.5px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:12px; font-family:'IBM Plex Mono',monospace; color:var(--navy);}
-.data-card ul{list-style:none; display:flex; flex-direction:column; gap:8px;}
-.data-card li{font-size:13.5px; color:var(--ink-soft); padding-left:14px; position:relative;}
-.data-card li::before{content:'—'; position:absolute; left:0; color:var(--accent-2);}
-
-.pipeline-strip{display:flex; gap:0; margin-top:40px; border:1px solid var(--line); border-radius:8px; overflow-x:auto;}
-.pipe-step{flex:1; min-width:150px; padding:18px 16px; border-right:1px solid var(--line); background:var(--surface);}
-.pipe-step:last-child{border-right:none;}
-.pipe-step .n{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); margin-bottom:6px;}
-.pipe-step h5{font-size:13.5px; margin-bottom:4px;}
-.pipe-step p{font-size:11.8px; color:var(--ink-soft);}
-
-/* ---------- Skills ---------- */
 .skills-groups{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
 .skill-group h4{font-size:12.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--accent-2); margin-bottom:14px; font-family:'IBM Plex Mono',monospace;}
-.skill-bar{margin-bottom:12px;}
-.skill-bar .lbl{font-size:13.5px; margin-bottom:5px;}
-.skill-bar .track{height:4px; background:var(--bg-2); border-radius:2px; overflow:hidden;}
-.skill-bar .fill{height:100%; background:var(--accent);}
 
-/* ---------- Experience / conferences ---------- */
 .exp-item{display:grid; grid-template-columns:160px 1fr; gap:22px; padding:20px 0; border-bottom:1px solid var(--line);}
 .exp-item:first-child{border-top:1px solid var(--line);}
 .exp-item .period{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-soft);}
@@ -214,46 +174,34 @@ nav.mainnav a.toplink:hover, nav.mainnav button.toplink:hover{color:var(--ink); 
 .exp-item .org{font-size:13px; color:var(--accent-2); margin-bottom:8px;}
 .exp-item p{font-size:13.5px; color:var(--ink-soft);}
 
-/* ---------- Blog / gallery ---------- */
-.blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-.blog-card{border:1px solid var(--line); border-radius:8px; background:var(--surface); overflow:hidden;}
-.blog-thumb{aspect-ratio:16/10; background:linear-gradient(135deg, var(--navy), var(--accent-2));}
-.blog-card-body{padding:18px 20px;}
-.blog-date{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); margin-bottom:8px;}
-.blog-card-body h4{font-size:15px; margin-bottom:6px;}
-.blog-card-body p{font-size:13px; color:var(--ink-soft);}
-
-.gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:8px;}
-.gallery-grid div{background:var(--surface); border:1px solid var(--line); border-radius:6px; display:flex; align-items:center; justify-content:center; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:11px; text-align:center; padding:8px;}
-.gallery-grid div:nth-child(1){grid-column:span 2; grid-row:span 2;}
-
-/* ---------- CV ---------- */
 .cv-box{border:1px solid var(--line); border-radius:8px; background:var(--surface); padding:36px; display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap;}
 .cv-box h3{font-size:19px; margin-bottom:8px;}
 .cv-box p{color:var(--ink-soft); font-size:14px; max-width:420px;}
-.downloads-list{display:flex; flex-direction:column; gap:10px; margin-top:20px;}
-.dl-row{display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border:1px solid var(--line); border-radius:8px; font-size:13.5px;}
-.dl-row a{color:var(--accent); font-weight:600;}
 
-/* ---------- Contact ---------- */
 .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
 .contact-list{display:flex; flex-direction:column; gap:16px; margin-top:6px;}
 .contact-row{display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:12px; font-size:14px;}
 .contact-row span:first-child{color:var(--ink-soft);}
 .contact-row a{font-weight:600; color:var(--accent);}
-.field{margin-bottom:16px;}
-.field label{display:block; font-size:12.5px; color:var(--ink-soft); margin-bottom:6px; font-family:'IBM Plex Mono',monospace;}
-.field input, .field textarea{width:100%; padding:12px 14px; border:1px solid var(--line); background:var(--bg-2); color:var(--ink); border-radius:6px; font-family:'Inter',sans-serif; font-size:14px;}
-.field textarea{resize:vertical; min-height:110px;}
+.field{margin-bottom:11px;}
+.field label{display:block; font-size:11.5px; color:var(--ink-soft); margin-bottom:4px; font-family:'IBM Plex Mono',monospace;}
+.field input, .field textarea{width:100%; padding:8px 12px; border:1px solid var(--line); background:var(--bg-2); color:var(--ink); border-radius:6px; font-family:'Inter',sans-serif; font-size:13.5px;}
+.field textarea{resize:vertical; min-height:64px;}
+
+.map-card{margin-top:14px; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--surface);}
+.map-card-head{padding:12px 14px 0;}
+.map-card-head h4{font-size:14px; margin-bottom:2px;}
+.map-card-head p{font-size:12.5px; color:var(--ink-soft);}
+.map-embed{width:100%; aspect-ratio:21/9; margin-top:10px;}
+.map-embed iframe{width:100%; height:100%; border:0; display:block;}
+.map-card-foot{padding:8px 14px 12px;}
 
 footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
 
-/* ---------- Responsive ---------- */
 @media (max-width:1024px){
   .hero{grid-template-columns:1fr;}
-  .hero-photo{order:-1; max-width:280px;}
-  .card-grid, .data-grid, .blog-grid{grid-template-columns:1fr 1fr;}
-  .skills-groups{grid-template-columns:1fr 1fr;}
+  .hero-photo{max-width:280px; margin:0 auto;}
+  .card-grid, .skills-groups{grid-template-columns:1fr 1fr;}
   .contact-grid{grid-template-columns:1fr;}
 }
 @media (max-width:768px){
@@ -268,9 +216,7 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
   }
   #navcheck:checked ~ header .navitem{width:100%;}
   #navcheck:checked ~ header .dropdown{position:static; display:flex !important; border:none; padding-left:14px; box-shadow:none;}
-  .stats-row{grid-template-columns:1fr 1fr;}
-  .card-grid, .data-grid, .blog-grid, .skills-groups{grid-template-columns:1fr;}
-  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .card-grid, .skills-groups{grid-template-columns:1fr;}
   .section{padding:56px 20px;}
   .hero{padding:44px 20px 44px;}
   .award-row, .exp-item{grid-template-columns:1fr;}
@@ -286,33 +232,33 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
 
 <header>
   <div class="nav-wrap">
-    <a href="#home" class="logo">Kanchan Sharma</a>
+    <a href="index.html" class="logo">Kanchan Sharma</a>
 
     <nav class="mainnav">
-      <div class="navitem"><a href="#about" class="toplink">About</a></div>
+      <div class="navitem"><a href="index.html#about" class="toplink">About</a></div>
       <div class="navitem">
         <button class="toplink">Academics <span class="caret">▾</span></button>
         <div class="dropdown">
-          <a href="#education">Education</a>
-          <a href="#coursework">Coursework</a>
-          <a href="#awards">Awards &amp; Achievements</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
+          <a href="academics.html#education">Education</a>
+          <a href="academics.html#coursework">Coursework</a>
+          <a href="academics.html#awards">Awards &amp; Achievements</a>
+          <a href="academics.html#skills">Skills</a>
+          <a href="academics.html#experience">Experience</a>
         </div>
       </div>
       <div class="navitem">
         <button class="toplink">Research <span class="caret">▾</span></button>
         <div class="dropdown">
-          <a href="#research">Research</a>
-          <a href="#projects">Current Projects</a>
-          <a href="#publications">Publications</a>
+          <a href="research.html#research">Research</a>
+          <a href="research.html#projects">Current Projects</a>
+          <a href="research.html#publications">Publications</a>
         </div>
       </div>
-      <div class="navitem"><a href="#conferences" class="toplink">Conferences &amp; Talks</a></div>
-      <div class="navitem"><a href="#blog" class="toplink">Blog</a></div>
-      <div class="navitem"><a href="#data" class="toplink">Data</a></div>
-      <div class="navitem"><a href="#cv" class="toplink">CV &amp; Downloads</a></div>
-      <div class="navitem"><a href="#contact" class="toplink">Contact</a></div>
+      <div class="navitem"><a href="conferences.html" class="toplink">Conferences &amp; Talks</a></div>
+      <div class="navitem"><a href="blog.html" class="toplink">Blog</a></div>
+      <div class="navitem"><a href="data.html" class="toplink">Data</a></div>
+      <div class="navitem"><a href="cv.html" class="toplink">CV &amp; Downloads</a></div>
+      <div class="navitem"><a href="index.html#contact" class="toplink">Contact</a></div>
     </nav>
 
     <div class="nav-right">
@@ -321,32 +267,23 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
     </div>
   </div>
 </header>
-
-<!-- ====================== HOME ====================== -->
+<div class="section" style="padding:32px 32px 0; border-bottom:none;"><a href="index.html" class="back-link">← Back to home</a></div>
+<!-- ====================== HOME / ABOUT (merged) ====================== -->
 <section class="hero" id="home">
+  <div class="hero-photo">
+       <img src="kanchan.jpeg" alt="Kanchan Sharma">
+  </div>
   <div>
-    <div class="hero-eyebrow">Ph.D. Researcher in Data Science · IISER Bhopal</div>
-    <h1>Kanchan Sharma</h1>
-    <p class="lede">Building an AI-driven decision-making toolbox for urban redevelopment.</p>
+    <div class="eyebrow" id="about">About</div>
+    <h1 style="margin-bottom:6px;">Kanchan Sharma</h1>
+    <h2 class="section-title" style="font-size:20px; margin-bottom:14px;">Hi, I'm Kanchan.</h2>
+    <p class="lede" style="max-width:560px;">I'm a PhD student in the Department of Data Science and Engineering at IISER Bhopal, supervised by Dr. Vaibhav Kumar. My research lies at the intersection of computer vision and urban planning, using visual and spatial data to understand urban environments and inform more effective planning decisions. I hold an M.Sc. in Mathematics from IIT Kanpur and a B.Sc. (Hons.) in Mathematics from Raj Rishi Autonomous College, Alwar, Raj. Outside research, I play badminton, read, write, and travel.</p>
     <div class="hero-ctas">
-      <a href="#research" class="btn btn-primary">Explore my research →</a>
-      <a href="#cv" class="btn btn-outline">View CV</a>
+      <a href="research.html#research" class="btn btn-primary">Explore my research →</a>
+      <a href="cv.html" class="btn btn-outline">View CV</a>
     </div>
   </div>
-  <div class="hero-photo">
-       <img src="kanchan.jpeg" alt="description"><!-- EDIT ZONE: replace this block with <img src="your-photo.jpg" alt="Kanchan Sharma"> -->
-    
-  </div>
 </section>
-
-<!-- ====================== ABOUT ====================== -->
-<section class="section" id="about">
-  <div class="eyebrow">About</div>
-  <h2 class="section-title">Hi, I'm Kanchan.</h2>
-  <p class="section-sub" style="max-width:760px;">I'm a PhD student in the Department of Data Science and Engineering at IISER Bhopal, supervised by Dr. Vaibhav Kumar. My research lies at the intersection of computer vision and urban planning, using visual and spatial data to understand urban environments and inform more effective planning decisions. I hold an M.Sc. in Mathematics from IIT Kanpur and a B.Sc. (Hons.) in Mathematics from Raj Rishi Autonomous College, Alwar, Raj. Outside research, I play badminton, read, write, and travel.</p>
-</section>
-
-
 
 <!-- ====================== HIGHLIGHTS ====================== -->
 <section class="section" id="highlights">
@@ -362,7 +299,6 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
   </div>
 
   <div class="highlights-wrap">
-
     <div class="highlights-slider" id="highlightsSlider">
 
       <article class="highlight-card">
@@ -370,250 +306,34 @@ footer{padding:30px 32px; text-align:center; font-size:12px; color:var(--ink-sof
           <span class="highlight-tag">Research · Poster</span>
           <span class="highlight-date">2026</span>
         </div>
-
         <h3>Workshop paper accepted as a poster at NeurIPS 2026</h3>
-
-        <p>
-          My workshop paper has been accepted as a poster at the
-          Women in Machine Learning (WiML) Workshop at NeurIPS 2026.
-        </p>
-
-        <a
-          class="highlight-link"
-          href="https://lnkd.in/p/dM6ycHVU"
-          target="_blank"
-          rel="noopener">
-          View announcement →
-        </a>
+        <p>My workshop paper has been accepted as a poster at the Women in Machine Learning (WiML) Workshop at NeurIPS 2026.</p>
+        <a class="highlight-link" href="https://lnkd.in/p/dM6ycHVU" target="_blank" rel="noopener">View announcement →</a>
       </article>
-
 
       <article class="highlight-card">
         <div class="highlight-top">
           <span class="highlight-tag">Symposium · IISER Bhopal</span>
           <span class="highlight-date">25 July 2026</span>
         </div>
-
         <h3>Symposium on AI in Energy Systems</h3>
-
-        <p>
-          Attended the Symposium on AI in Energy Systems at IISER Bhopal,
-          featuring talks, discussions, student presentations, and a poster session.
-        </p>
-
-        <a
-          class="highlight-link"
-          href="https://www.iiserb.ac.in/assets/all_upload/events/Symposium_AI_in_Energy_Systems.pdf"
-          target="_blank"
-          rel="noopener">
-          View event details →
-        </a>
+        <p>Attended the Symposium on AI in Energy Systems at IISER Bhopal, featuring talks, discussions, student presentations, and a poster session.</p>
+        <a class="highlight-link" href="https://www.iiserb.ac.in/assets/all_upload/events/Symposium_AI_in_Energy_Systems.pdf" target="_blank" rel="noopener">View event details →</a>
       </article>
 
     </div>
 
     <div class="highlights-controls">
-
       <div class="highlight-dots">
         <button class="highlight-dot active" aria-label="Show highlight 1"></button>
         <button class="highlight-dot" aria-label="Show highlight 2"></button>
       </div>
-
       <div class="highlight-arrows">
-        <button class="highlight-arrow" id="highlightPrev" aria-label="Previous highlight">
-          ←
-        </button>
-        <button class="highlight-arrow" id="highlightNext" aria-label="Next highlight">
-          →
-        </button>
+        <button class="highlight-arrow" id="highlightPrev" aria-label="Previous highlight">←</button>
+        <button class="highlight-arrow" id="highlightNext" aria-label="Next highlight">→</button>
       </div>
-
     </div>
-
   </div>
-</section> 
-
-
-<script>
-/* ---------- Highlights Slider ---------- */
-
-const highlightsSlider = document.getElementById('highlightsSlider');
-const highlightCards = highlightsSlider.querySelectorAll('.highlight-card');
-const highlightDots = document.querySelectorAll('.highlight-dot');
-const highlightPrev = document.getElementById('highlightPrev');
-const highlightNext = document.getElementById('highlightNext');
-
-let highlightIndex = 0;
-
-function showHighlight(index){
-  if(index < 0) index = highlightCards.length - 1;
-  if(index >= highlightCards.length) index = 0;
-
-  highlightIndex = index;
-
-  highlightsSlider.scrollTo({
-    left: highlightCards[index].offsetLeft - highlightsSlider.offsetLeft,
-    behavior: 'smooth'
-  });
-
-  highlightDots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-}
-
-highlightNext.addEventListener('click', () => {
-  showHighlight(highlightIndex + 1);
-});
-
-highlightPrev.addEventListener('click', () => {
-  showHighlight(highlightIndex - 1);
-});
-
-highlightDots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    showHighlight(index);
-  });
-});
-
-highlightsSlider.addEventListener('scroll', () => {
-  const scrollLeft = highlightsSlider.scrollLeft;
-
-  let closestIndex = 0;
-  let closestDistance = Infinity;
-
-  highlightCards.forEach((card, index) => {
-    const distance = Math.abs(card.offsetLeft - highlightsSlider.offsetLeft - scrollLeft);
-
-    if(distance < closestDistance){
-      closestDistance = distance;
-      closestIndex = index;
-    }
-  });
-
-  highlightIndex = closestIndex;
-
-  highlightDots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === closestIndex);
-  });
-});
-</script>
-
-   
-
-
-   
-
-<!-- ====================== ACADEMICS: EDUCATION ====================== -->
-<section class="section" id="education">
-  <div class="eyebrow">Academics — Education</div>
-  <h2 class="section-title">Education timeline</h2>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-year">Aug 2025 – ongoing</div><div class="tl-dot"></div><div class="tl-content"><h4>Ph.D. in Data Science, IISER Bhopal</h4><p>Dept. of Data Science &amp; Engineering, supervised by Prof. Vaibhav Kumar.</p></div></div>
-    <div class="tl-item"><div class="tl-year">2022 – 2024</div><div class="tl-dot"></div><div class="tl-content"><h4>M.Sc. in Mathematics</h4><p>Indian Institute of Technology (IIT) Kanpur.</p></div></div>
-    <div class="tl-item"><div class="tl-year">2018 – 2021</div><div class="tl-dot"></div><div class="tl-content"><h4>B.Sc. (Hons.) in Mathematics</h4><p>INSPIRE Scholarship recipient (2018–2021).</p></div></div>
-  </div>
-</section>
-
-<!-- ====================== ACADEMICS: COURSEWORK ====================== -->
-<section class="section" id="coursework">
-  <div class="eyebrow">Academics — Coursework</div>
-  <h2 class="section-title">Ph.D. Coursework</h2>
-  <div class="pill-grid">
-    <span class="pill">Machine Learning</span>
-    <span class="pill">Computer Vision</span>
-    <span class="pill">3D Deep Learning</span>
-    <span class="pill">Data Science in Practice</span>
-    <span class="pill">Deep Learning &amp; AI</span>
-  </div>
-</section>
-
-
-
-<!-- ====================== ACADEMICS: SKILLS ====================== -->
-<section class="section" id="skills">
-  <div class="eyebrow">Academics — Skills</div>
-  <div class="skills-groups">
-    <div class="skill-group"><h4>Machine Learning</h4></div>
-    <div class="skill-group"><h4>Computer Vision</h4></div>
-  </div>
-</section>
-
-
-
-
-
-<!-- ====================== RESEARCH INTERESTS ====================== -->
-<section class="section" id="research">
-  <div class="eyebrow">Research</div>
-  <h2 class="section-title">What I work on</h2>
-<p>
-  I work on urban planning research, focusing on understanding the factors that shape quality of life in cities. My work is to develop data-driven methods to identify what's driving poor outcomes in specific urban areas, and to figure out what kinds of interventions could realistically improve them. The broader goal is to make urban redevelopment more evidence-based, so that cities can prioritize changes that meaningfully improve everyday life for residents.
-</p>
-  <h3 style="font-size:15px; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.06em; color:var(--accent-2); margin-bottom:16px;">What I work with</h3>
-  <div class="pill-grid" style="margin-bottom:50px;">
-    <span class="pill">Street-view imagery</span>
-    <span class="pill">UAV &amp; aerial LiDAR</span>
-    <span class="pill">Semantic segmentation</span>
-    <span class="pill">DINOv3</span>
-    <span class="pill">Elastic Net regression</span>
-    <span class="pill">SLSQP optimization</span>
-    <span class="pill">GIS &amp; spatial analytics</span>
-  </div>
-
-  <h3 style="font-size:15px; font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.06em; color:var(--accent-2); margin-bottom:16px;">Research threads</h3>
-</section>
-
-<!-- ====================== CURRENT PROJECTS ====================== -->
-<section class="section" id="projects">
-  <div class="eyebrow">Research — Current Projects</div>
-</section>
-
-<!-- ====================== PUBLICATIONS ====================== -->
-<section class="section" id="publications">
-  <div class="eyebrow">Research — Publications</div>
-  <h2 class="section-title">Papers &amp; preprints</h2>
-  <p class="section-sub">Coming soon.</p>
-</section>
-
-<!-- ====================== CONFERENCES ====================== -->
-<section class="section" id="conferences">
-  <div class="eyebrow">Conferences &amp; Talks</div>
-  <h2 class="section-title">Presentations</h2>
-  <div class="exp-item">
-    <div class="period"></div>
-    <div><h4>Symposium on AI in Energy Systems</h4><div class="org">IISER Bhopal</div><p>Attended.</p></div>
-  </div>
-</section>
-
-<!-- ====================== BLOG ====================== -->
-<section class="section" id="blog">
-  <div class="eyebrow">Blog</div>
-  <h2 class="section-title">Research notes</h2>
-</section>
-
-<!-- ====================== DATA I WORK WITH ====================== -->
-<section class="section" id="data">
-  <div class="eyebrow">Data</div>
-  <h2 class="section-title">Data sources</h2>
-  <div class="pill-grid">
-    <span class="pill">Street-view imagery</span>
-    <span class="pill">UAV / drone imagery</span>
-    <span class="pill">Aerial LiDAR point clouds</span>
-    <span class="pill">GIS / OpenStreetMap vector data</span>
-    <span class="pill">Semantic segmentation masks</span>
-    <span class="pill">Thermal &amp; nDSM raster data</span>
-  </div>
-</section>
-
-<!-- ====================== CV ====================== -->
-<section class="section" id="cv">
-  <div class="eyebrow">CV &amp; Downloads</div>
-  <h2 class="section-title">Curriculum Vitae</h2>
-  <div class="cv-box">
-    <div><h3>Full CV — updated regularly</h3><p>Replace the link with your hosted CV file.</p></div>
-    <a href="#" class="btn btn-primary">Download PDF</a>
-  </div>
-
 </section>
 
 <!-- ====================== CONTACT ====================== -->
@@ -632,12 +352,27 @@ highlightsSlider.addEventListener('scroll', () => {
         <div class="contact-row"><span>Location</span><span>Bhopal, Madhya Pradesh, India</span></div>
       </div>
     </div>
-    <form id="contactForm">
-      <div class="field"><label for="fname">Name</label><input id="fname" type="text" required></div>
-      <div class="field"><label for="femail">Email</label><input id="femail" type="email" required></div>
-      <div class="field"><label for="fmsg">Message</label><textarea id="fmsg" required></textarea></div>
-      <button type="submit" class="btn btn-primary">Send message</button>
-    </form>
+    <div>
+      <form id="contactForm">
+        <div class="field"><label for="fname">Name</label><input id="fname" type="text" required></div>
+        <div class="field"><label for="femail">Email</label><input id="femail" type="email" required></div>
+        <div class="field"><label for="fmsg">Message</label><textarea id="fmsg" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+
+      <div class="map-card">
+        <div class="map-card-head">
+          <h4>Find me</h4>
+          <p>Academic Building 4, IISER Bhopal, Bhauri, Madhya Pradesh</p>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://maps.google.com/maps?q=IISER%20Bhopal%20Academic%20Building%204%2C%20Bhauri%2C%20Madhya%20Pradesh&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Academic Building 4, IISER Bhopal on Google Maps"></iframe>
+        </div>
+        <div class="map-card-foot">
+          <a class="highlight-link" href="https://www.google.com/maps/search/?api=1&query=IISER+Bhopal+Academic+Building+4" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -658,16 +393,42 @@ toggle.addEventListener('click', () => setMode(!root.classList.contains('light')
 toggle.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle.click(); } });
 document.querySelectorAll('nav.mainnav a').forEach(a => a.addEventListener('click', () => { document.getElementById('navcheck').checked = false; }));
 
+/* ---------- Highlights Slider ---------- */
+const highlightsSlider = document.getElementById('highlightsSlider');
+const highlightCards = highlightsSlider.querySelectorAll('.highlight-card');
+const highlightDots = document.querySelectorAll('.highlight-dot');
+const highlightPrev = document.getElementById('highlightPrev');
+const highlightNext = document.getElementById('highlightNext');
+let highlightIndex = 0;
+function showHighlight(index){
+  if(index < 0) index = highlightCards.length - 1;
+  if(index >= highlightCards.length) index = 0;
+  highlightIndex = index;
+  highlightsSlider.scrollTo({ left: highlightCards[index].offsetLeft - highlightsSlider.offsetLeft, behavior: 'smooth' });
+  highlightDots.forEach((dot, i) => { dot.classList.toggle('active', i === index); });
+}
+highlightNext.addEventListener('click', () => { showHighlight(highlightIndex + 1); });
+highlightPrev.addEventListener('click', () => { showHighlight(highlightIndex - 1); });
+highlightDots.forEach((dot, index) => { dot.addEventListener('click', () => { showHighlight(index); }); });
+highlightsSlider.addEventListener('scroll', () => {
+  const scrollLeft = highlightsSlider.scrollLeft;
+  let closestIndex = 0; let closestDistance = Infinity;
+  highlightCards.forEach((card, index) => {
+    const distance = Math.abs(card.offsetLeft - highlightsSlider.offsetLeft - scrollLeft);
+    if(distance < closestDistance){ closestDistance = distance; closestIndex = index; }
+  });
+  highlightIndex = closestIndex;
+  highlightDots.forEach((dot, i) => { dot.classList.toggle('active', i === closestIndex); });
+});
+
 /* ---------- Contact form: open the visitor's email client with a prefilled message ---------- */
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
   const name = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
   const msg = document.getElementById('fmsg').value.trim();
-
   const subject = encodeURIComponent(`Message from ${name} via portfolio site`);
   const body = encodeURIComponent(`${msg}\n\n— ${name} (${email})`);
-
   window.location.href = `mailto:kanchan25@iiserb.ac.in?subject=${subject}&body=${body}`;
 });
 </script>
